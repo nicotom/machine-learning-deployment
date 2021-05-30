@@ -36,21 +36,13 @@ Download the dataset from [here](https://www.kaggle.com/shivachandel/kc-house-da
 
 `docker-compose up --build`
 
-`curl -X POST -H "Content-Type: application/json" -d @to_predict_json.json http://localhost:8080/predict_price`
-
-where `to_predict.json` contains:
-
-`{"grade":9.0,"lat":37.45,"long":12.09,"sqft_living":1470.08,"waterfront":0.0,"yr_built":2008.0}`
-
-or
-
-`curl -X POST -H "Content-Type: application/json" -d '{"grade":9.0,"lat":37.45,"long":12.09,"sqft_living":1470.08,"waterfront":0.0,"yr_built":2008.0}' http://localhost:8080/predict_price`
+`curl -X POST -H "Content-Type: application/json" -d '{"month": 2, "hour": 18, "ItemQty": 26}' http://localhost:8080/predict_price`
 
 Output:
 
 ```json
 {
-  "predict cost": 1022545.34768284
+  "predict cost": 276.38917984546003
 }
 ```
 
