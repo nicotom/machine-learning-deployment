@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from joblib import load
 
 model = load('rf.joblib')
