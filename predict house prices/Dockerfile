@@ -1,16 +1,9 @@
-FROM ubuntu:16.04
+# syntax=docker/dockerfile:1
 
-MAINTAINER Abhinav Sagar "abhinavsagar4@gmail.com"
+FROM python:3.8-slim-buster
 
-
-RUN apt -y update &&\
-    apt -y install python3 python3-pip
-
-RUN python3 -m pip install --upgrade pip
-
- 
 ADD ./python_requirements.txt /
-RUN python3 -m pip install -r python_requirements.txt
+RUN pip3 install --no-cache-dir -r python_requirements.txt
 
 ADD ./prediction.py /
 ADD ./server.py /
