@@ -7,6 +7,6 @@ RUN pip3 install --no-cache-dir -r python_requirements.txt
 
 ADD ./prediction.py /
 ADD ./server.py /
-ADD ./kc_house_data.csv /
+ADD ./rf.joblib /
 
 CMD [ "python3", "-u", "./server.py" ]
